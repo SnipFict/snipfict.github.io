@@ -1,1 +1,1 @@
-# snipfict.github.io
+# SnipFict
