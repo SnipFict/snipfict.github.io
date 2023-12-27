@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+    @font-face {
+        font-family: Bookman;
+        src: url('Bookman.otf');
+        font-display: swap;
+    }
+        * {
+            box-sizing: border-box;
+            font-family: Bookman;
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            padding: 0em 1.15em 0em 1.15em;
+            background: #222225;
+            color: #C7C7C7;
+        }
+        main {
+            padding-top: 5.15em;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            border: 2px solid tan;
+            border-radius: 15px;
+            outline: none;
+        }
+        h1, h2, h3 {
+            line-height: 1.5;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: #C7C7C7;
+        }
+        header h1 {
+            padding: .25em;
+            text-shadow: 1px 2px cornsilk;
+            box-shadow: 2px 2px 4px #181818, -2px -2px 4px #181818;
+            position: fixed;
+            letter-spacing: 2px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: 2;
+            color: #000000;
+            background: tan;
+        }
+        .container {
+            display: grid;
+            padding: 1em 0em 1em 0em;
+            grid-template-columns: 50% 50%;
+            justify-content: space-evenly;
+            transition: all .3s ease-in;
+            text-align: center;
+            gap: 14px;
+        }
+        .container a {
+            transition: all .3s ease-in;
+        }
+        .container section {
+            object-fit: contain;
+            transition: all .3s ease-in;
+        }
+        .container section a h2 {
+            box-shadow: 2px 2px 4px #181818, -2px -2px 4px #181818;
+            border: 2px solid tan;
+            transition: all .3s ease-in;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px;
+            display: grid;
+            color: #C7C7C7;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cover.jpg');
+            background-position: center;
+            background-size: contain;
+            text-shadow: 1px 2px #333335;
+            border-radius: 15px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            align-items: center;
+            height: 250px;
+        }
+        .container section a h2::-webkit-scrollbar {
+            display: none;
+        }
+        .container section a h2:hover {
+            transform: translate(0, 5px);
+        }
+        .container section h2 {
+            font-size: 14px;
+            text-align: center;
+        }
+        @media screen and (min-width: 720px){
+            .container{
+                grid-template-columns: 32% 32% 32%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SNIPFICT</h1>
+    </header>
+    <main>
+        <input id="search-story" type="search" placeholder="SEARCH STORY">
+        <section class="container">
+            <section>
+                <a href="#">
+                    <h2>Positional Sacrifices: Using Strategy to Gain Advantage</h2>
+                </a>
+            </section>
+
+            <section>
+                <a href="#">
+                    <h2>The Path to Mindfulness: Cultivating Presence in a Fast-Paced World</h2>
+                </a>
+            </section>
+
+            <section>
+                <a href="#">
+                    <h2>Mastering Chess Intuition: Making Instinctive Moves</h2>
+                </a>
+            </section>
+
+            <section>
+                <a href="#">
+                    <h2 id="meow">The Story Of The Youth Who Went Forth To Learn What Fear Was</h2>
+                </a>
+            </section>
+
+            <section>
+                <a href="#">
+                    <h2>THE FROG-KING, OR IRON HENRY</h2>
+                </a>
+            </section>
+
+            <section>
+                <a href="#">
+                    <h2>THE FROG-KING, OR IRON HENRY AND THE FRIEND SHIT</h2>
+                </a>
+            </section>
+
+            <section>
+                <a href="#">
+                    <h2>THE FROG-KING, OR IRON HENRY</h2>
+                </a>
+            </section>
+
+            <section>
+                <a href="#">
+                    <h2>THE FROG-KING, OR IRON HENRY AND THE FRIEND SHIT</h2>
+                </a>
+            </section>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script defer>
+        let searchStory = document.getElementById('search-story');
+        searchStory.addEventListener('input', () => {
+            let searchValue = searchStory.value.toUpperCase();
+            let storyTitles = document.querySelectorAll('.container a');
+            storyTitles.forEach(title => {
+                let titleText = title.innerText.toUpperCase();
+                if (titleText.includes(searchValue)) {
+                    title.parentElement.style.display = "grid";
+                } else {
+                    title.parentElement.style.display = "none";
+                }
+            })
+        });
+
+    </script>
+</body>
+</html>

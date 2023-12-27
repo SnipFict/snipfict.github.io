@@ -1,0 +1,125 @@
+@keyframes fade {
+    from {
+        width: 0%;
+        opacity: 0;
+    }
+    to {
+        width: 70%;
+        opacity: 1;
+    }
+}
+@font-face {
+    font-family: Bookman;
+    src: url('Bookman.otf');
+    font-display: swap;
+}
+* {
+    font-family: Bookman;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    margin: 2.5em;
+    color: #B7B7B7;
+    background: #222225;
+    padding-bottom: 1em;
+}
+h1 {
+    text-align: center;
+}
+p {
+    line-height: 1.5;
+    margin: 2em 0em 2em 0em;
+    text-align: justify;
+    font-size: 16px;
+}
+.menuDiv {
+    display: none;
+    box-shadow: 1px 1px 3px #181818;
+    animation: fade .3s ease-in;
+    background: #181818;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 3;
+    padding: 10px;
+    height: 100%;
+    width: 70%;
+    left: 0px;
+    top: 0px;
+}
+.menuDiv::-webkit-scrollbar, body::-webkit-scrollbar, div::-webkit-scrollbar {
+    display: none;
+}
+.menuDiv a {
+    text-decoration: none;
+}
+.menuDiv a h2 {
+    width: 100%;
+    padding: 14px;
+    color: #B7B7B7;
+    text-transform: uppercase;
+    border-bottom: 4px dashed #333335;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 14px;
+}
+.menuDiv a h2:nth-child(odd) {
+    margin: 6px 0px 6px 0px;
+}
+.menuDiv input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    background: inherit;
+    text-transform: uppercase;
+    border-bottom: 4px dashed #333335;
+    color: #B7B7B7;
+}
+.menuBtn {
+    position: fixed;
+    height: 48px;
+    width: 48px;
+    border: 2px solid tan;
+    outline: none;
+    box-shadow: 2px 2px 8px #181818, -2px -2px 8px #181818;
+    transition: all .3s ease-in;
+    background: #181818;
+    font-size: 24px;
+    border-radius: 50%;
+    align-content: center;
+    justify-content: center;
+    display: grid;
+    bottom: 10%;
+    right: 5%;
+}
+.adDiv {
+    background: silver;
+    width: 320px;
+    height: 50px;
+    transform: translate(-50%);
+    position: fixed;
+    margin: auto;
+    bottom: 0px;
+    left: 50%;
+}
+.sideAd {
+    background: silver;
+    margin: auto;
+    height: auto;
+    width: 100%;
+}
+.progressBarDiv{
+    position: fixed;
+    height: 2px;
+    z-index: 1;
+    background: tan;
+    left: 0px;
+    top: 0px;
+}
